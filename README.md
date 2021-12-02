@@ -40,3 +40,4 @@ Currently our app has a hard dependency on `pokeapi` and soft dependency on `tra
 It's also awfully slow as my ping to both those apis is averaging 150-300ms.
 Considering a static nature of the data (it rarely changes, if ever) - it makes sense to introduce some local cache for the data. This will in theory solve both latency & hard dependency issues.
 
+I don't currently handle the case where translation api is dead. Only the one where it is alive and returns some proper errors.
