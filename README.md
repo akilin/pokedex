@@ -20,7 +20,7 @@ Grafana credentials are `admin`/`admin`
 * Use proper graphql client and not a poor-mans graphql client (HttpClient post)
 * Don't use graphql api of `pokeapi` as it's currently in Beta
 * Currently `en` language id is hardcoded as a constant. I don't expect it to change, but in theory it's better to retrieve it on app start via their api from `https://pokeapi.co/api/v2/language`
-* Maybe would've change some things that are currently `string` to be `enum` (not pokemons. but maybe translation options?)
+* Maybe would've changed some things that are currently `string` to be `enum` (not pokemons. but maybe translation options?)
 * I think the place where I handle the rate-limit error is not entirely correct. It should be in service layer, not where we integrate with transaltion api. I noticed this after i was done and decided to keep as-is. 
 * Global error handler (both middleware & unobserved exception event)
 * CI/CD pipeline
