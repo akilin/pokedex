@@ -12,8 +12,9 @@ over-engineered pokedex implementation
 | Swagger     | http://localhost:5000/swagger |
 | Seq         | http://localhost:5341         |
 | Grafana     | http://localhost:3000         |
-| Prometheus  | http://localhost:9090          |
+| Prometheus  | http://localhost:9090         |
 
+Grafana credentials are `admin`/`admin`
 ## Things I'd do different for prod
 * Change root namespaces for each project to include `Pokedex` and not just be `Core`/`Infra`/`Web` etc
 * Use proper graphql cliend and now poor-mans graphql client (HttpClient post)
