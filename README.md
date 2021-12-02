@@ -17,7 +17,7 @@ over-engineered pokedex implementation
 Grafana credentials are `admin`/`admin`
 ## Things I'd do different for prod
 * Change root namespaces for each project to include `Pokedex` and not just be `Core`/`Infra`/`Web` etc
-* Use proper graphql cliend and now poor-mans graphql client (HttpClient post)
+* Use proper graphql client and not a poor-mans graphql client (HttpClient post)
 * Don't use graphql api of `pokeapi` as it's currently in Beta
 * Currently `en` language id is hardcoded as a constant. I don't expect it to change, but in theory it's better to retrieve it on app start via their api from `https://pokeapi.co/api/v2/language`
 * Maybe would've change some things that are currently `string` to be `enum` (not pokemons. but maybe translation options?)
