@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 5s
+
+# A scrape configuration containing exactly one endpoint to scrape.
+scrape_configs:
+  - job_name: 'api'
+    static_configs:
+      - targets: ['api:80']
+
+  # - job_name: 'haproxy'
+  #   static_configs:
+  #     - targets: ['haproxy:9101']
+
+  # - job_name: 'cadvisor'
+  #   static_configs:
+  #     - targets: ['cadvisor:8080']

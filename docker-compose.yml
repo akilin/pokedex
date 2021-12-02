@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      target: final
+    container_name: api
+    ports:
+      - 5000:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - Serilog__WriteTo__0__Name=Seq
+      - Serilog__WriteTo__0__Args__serverUrl=http://seq:80
+
+  seq:
+    image: datalust/seq
+    container_name: seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:80
+
+  prometheus:
+    container_name: prometheus
+    build:
+      context: ./containers/prometheus
+    ports:
+      - 9090:9090
+  
+  grafana:
+    container_name: grafana
+    build:
+      context: ./containers/grafana
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+
+
+
+  
+  
